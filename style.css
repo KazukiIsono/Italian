@@ -9,12 +9,12 @@ body {
   margin: 0;
   font-family: "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background: #1b1b20;
-  color: #f5f5f5;
+  background: #f4f2ec;              /* 明るいベージュ系背景 */
+  color: #333333;
 }
 
 a {
-  color: #ffd27f;
+  color: #c35b2c;                   /* 温かみのあるオレンジ */
   text-decoration: none;
 }
 
@@ -26,10 +26,11 @@ a:hover {
 .wrapper {
   max-width: 1100px;
   margin: 0 auto;
-  background: #232329;
+  background: #ffffff;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* =========================
@@ -37,8 +38,8 @@ a:hover {
    ========================= */
 .site-header {
   padding: 16px 20px 0;
-  background: linear-gradient(135deg, #5b2124, #ab3b40);
-  color: #ffffff;
+  background: linear-gradient(135deg, #f8d9b5, #f6b783);
+  color: #5a2a1a;
 }
 
 /* ロゴ＋タイトル */
@@ -52,8 +53,8 @@ a:hover {
   height: 72px;
   width: auto;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.35);
-  background: rgba(0, 0, 0, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.7);
 }
 
 .site-title h1 {
@@ -91,8 +92,8 @@ a:hover {
    グローバルナビ
    ========================= */
 .global-nav {
-  background: #16161b;
-  border-bottom: 1px solid #2e2e36;
+  background: #fff7ec;
+  border-bottom: 1px solid #e2d7c7;
 }
 
 .global-nav ul {
@@ -105,15 +106,16 @@ a:hover {
 }
 
 .global-nav a {
-  color: #f5f5f5;
+  color: #6b3b22;
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 0.95rem;
   display: inline-block;
+  background: transparent;
 }
 
 .global-nav a:hover {
-  background: #ab3b40;
+  background: #f4d4b2;
 }
 
 /* =========================
@@ -125,6 +127,7 @@ a:hover {
   gap: 24px;
   padding: 24px 20px 32px;
   flex: 1;
+  background: #fffdf8;
 }
 
 .main-content {
@@ -140,22 +143,24 @@ a:hover {
    ========================= */
 .section {
   margin-bottom: 28px;
-  background: #292931;
+  background: #ffffff;
   border-radius: 12px;
   padding: 16px 18px;
+  border: 1px solid #efe4d5;
 }
 
 .section h2 {
   margin-top: 0;
   margin-bottom: 10px;
   font-size: 1.2rem;
-  border-left: 4px solid #ab3b40;
+  border-left: 4px solid #e0813a;
   padding-left: 8px;
+  color: #5a2a1a;
 }
 
 .section p {
   margin: 0 0 10px;
-  line-height: 1.7;
+  line-height: 1.8;
   font-size: 0.94rem;
 }
 
@@ -181,10 +186,11 @@ a:hover {
 }
 
 .card {
-  background: #30303a;
+  background: #fffaf3;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1e1cd;
 }
 
 .card img {
@@ -197,50 +203,52 @@ a:hover {
 .card h3 {
   margin: 10px 12px 4px;
   font-size: 1rem;
+  color: #5a2a1a;
 }
 
 .card p {
   margin: 0 12px 12px;
   font-size: 0.88rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* =========================
    サイドバー
    ========================= */
 .side-box {
-  background: #2e2e37;
+  background: #fffaf5;
   border-radius: 10px;
   padding: 14px 16px;
+  border: 1px solid #f0dfcc;
 }
 
 .side-box h2 {
   font-size: 1.05rem;
+  color: #5a2a1a;
 }
 
 .side-box p {
   font-size: 0.9rem;
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* =========================
    フッター
    ========================= */
 .site-footer {
-  background: #15151a;
-  color: #aaaaaa;
+  background: #fff7ec;
+  color: #7b6a58;
   text-align: center;
   padding: 12px;
   font-size: 0.8rem;
-  border-top: 1px solid #2e2e36;
+  border-top: 1px solid #e2d7c7;
 }
 
 /* =========================
-   ページ共通で使えそうな汎用クラス
-   （menu.html, course.html, access.html でも再利用すると楽）
+   汎用クラス（menu, course, access でも使用）
    ========================= */
 
-/* 2カラムレイアウト用（メニュー表などで） */
+/* 2カラムレイアウト用（メニュー表など） */
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -257,7 +265,7 @@ a:hover {
 .menu-list li {
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid #3a3a45;
+  border-bottom: 1px dotted #d8c7b3;
   padding: 6px 0;
   font-size: 0.94rem;
 }
@@ -272,8 +280,8 @@ a:hover {
   padding: 2px 8px;
   border-radius: 999px;
   font-size: 0.75rem;
-  background: #ab3b40;
-  color: #fff;
+  background: #f1a45d;
+  color: #5a2a1a;
 }
 
 /* =========================
