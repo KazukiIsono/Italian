@@ -1,5 +1,5 @@
 /* =========================
-   ベース設定
+   0. ベース設定
    ========================= */
 * {
   box-sizing: border-box;
@@ -9,12 +9,12 @@ body {
   margin: 0;
   font-family: "Yu Gothic", system-ui, -apple-system, BlinkMacSystemFont,
     "Segoe UI", sans-serif;
-  background: #f4f2ec;              /* 明るいベージュ系背景 */
+  background: #ffeeca; /* ベージュ系背景 */
   color: #333333;
 }
 
 a {
-  color: #c35b2c;                   /* 温かみのあるオレンジ */
+  color: #c35b2c; /* 温かみのあるオレンジ */
   text-decoration: none;
 }
 
@@ -24,37 +24,43 @@ a:hover {
 
 /* ページ全体の枠 */
 .wrapper {
-  max-width: 1100px;
+  max-width: none;
+  width: 100%;
   margin: 0 auto;
-  background: #ffffff;
+  background: #f4f2ef;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
 }
 
 /* =========================
-   ヘッダー
+   1. ヘッダー（ロゴ＋キャッチコピー）
    ========================= */
 .site-header {
-  padding: 16px 20px 0;
-  background: linear-gradient(135deg, #f8d9b5, #f6b783);
-  color: #5a2a1a;
+  padding: 16px 20px 10px;
+  background: linear-gradient(135deg, #ffffff, #f3e6da, #f7e6d9);
+  color: #4a2615;
 }
 
-/* ロゴ＋タイトル */
+/* ロゴ＋サイトタイトル（※常に横並び） */
 .logo-area {
   display: flex;
   align-items: center;
   gap: 16px;
+  justify-content: space-between;
+  flex-wrap: nowrap; /* 常に横並び */
 }
 
 .logo {
   height: 72px;
   width: auto;
   border-radius: 10px;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  background: rgba(255, 255, 255, 0.7);
+}
+
+.title-logo {
+  height: 80px;
+  width: auto;
+  border-radius: 10px;
 }
 
 .site-title h1 {
@@ -73,8 +79,11 @@ a:hover {
   font-size: 0.9rem;
 }
 
-/* ヒーロー動画／画像 */
+/* =========================
+   2. ヒーロー動画＋オーバーレイ
+   ========================= */
 .hero-media {
+  position: relative;
   margin-top: 12px;
   border-radius: 14px 14px 0 0;
   overflow: hidden;
@@ -83,17 +92,56 @@ a:hover {
 .hero-media video,
 .hero-media img {
   width: 100%;
-  display: block;
-  max-height: 320px;
+  height: 65vh;       /* 画面の 65% 高さ */
   object-fit: cover;
+  display: block;
+}
+
+/* 動画の上に重ねるテキスト */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;  /* 下寄せ */
+  align-items: flex-start;
+  padding: 0 8% 10%;
+
+  /* 下側を少し暗くして読みやすくする */
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55),
+    rgba(0, 0, 0, 0.18),
+    rgba(0, 0, 0, 0)
+  );
+
+  color: #fff;
+  pointer-events: none; /* クリックは動画側へ */
+}
+
+.overlay-sub {
+  font-size: 0.95rem;
+  margin: 0 0 6px;
+}
+
+.overlay-main {
+  font-size: 2.1rem;
+  font-weight: 600;
+  margin: 0 0 6px;
+}
+
+.overlay-note {
+  font-size: 0.9rem;
+  opacity: 0.9;
+  margin: 0;
 }
 
 /* =========================
-   グローバルナビ
+   3. グローバルナビ
    ========================= */
 .global-nav {
-  background: #fff7ec;
   border-bottom: 1px solid #e2d7c7;
+
 }
 
 .global-nav ul {
@@ -102,7 +150,9 @@ a:hover {
   list-style: none;
   display: flex;
   gap: 16px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;      
+  overflow-x: auto;      
+  justify-content: flex-end;  
 }
 
 .global-nav a {
@@ -112,14 +162,15 @@ a:hover {
   font-size: 0.95rem;
   display: inline-block;
   background: transparent;
+  white-space: nowrap;
 }
 
 .global-nav a:hover {
-  background: #f4d4b2;
+  background: #ffeedc;
 }
 
 /* =========================
-   メインレイアウト（グリッド）
+   4. メインレイアウト（article + aside）
    ========================= */
 .main-grid {
   display: grid;
@@ -139,7 +190,7 @@ a:hover {
 }
 
 /* =========================
-   セクション共通
+   5. セクション共通
    ========================= */
 .section {
   margin-bottom: 28px;
@@ -164,7 +215,6 @@ a:hover {
   font-size: 0.94rem;
 }
 
-/* 箇条書き（コース概要など） */
 .section ul {
   margin: 0 0 10px 1.2em;
   padding: 0;
@@ -176,7 +226,7 @@ a:hover {
 }
 
 /* =========================
-   こだわりカード（カードグリッド）
+   6. こだわりカード
    ========================= */
 .card-grid {
   display: grid;
@@ -213,7 +263,7 @@ a:hover {
 }
 
 /* =========================
-   サイドバー
+   7. サイドバー
    ========================= */
 .side-box {
   background: #fffaf5;
@@ -233,11 +283,11 @@ a:hover {
 }
 
 /* =========================
-   フッター
+   8. フッター
    ========================= */
 .site-footer {
-  background: #fff7ec;
-  color: #7b6a58;
+  background: #8f7f68;
+  color: #f0e4d7;
   text-align: center;
   padding: 12px;
   font-size: 0.8rem;
@@ -245,10 +295,10 @@ a:hover {
 }
 
 /* =========================
-   汎用クラス（menu, course, access でも使用）
+   9. 汎用クラス（他ページでも使用）
    ========================= */
 
-/* 2カラムレイアウト用（メニュー表など） */
+/* 2カラムレイアウト（メニュー表など） */
 .two-column {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -274,7 +324,7 @@ a:hover {
   margin-left: 12px;
 }
 
-/* タグ風の小ラベル（例：おすすめ・女子会向けなど） */
+/* タグ風ラベル（おすすめ・女子会向けなど） */
 .badge {
   display: inline-block;
   padding: 2px 8px;
@@ -285,7 +335,7 @@ a:hover {
 }
 
 /* =========================
-   レスポンシブ対応
+   10. レスポンシブ対応
    ========================= */
 @media (max-width: 900px) {
   .main-grid {
@@ -294,15 +344,6 @@ a:hover {
 }
 
 @media (max-width: 768px) {
-  .wrapper {
-    border-radius: 0;
-  }
-
-  .logo-area {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
   .main-grid {
     grid-template-columns: 1fr;
     padding: 18px 14px 24px;
@@ -312,9 +353,9 @@ a:hover {
     padding: 14px;
   }
 
-  .global-nav ul {
-    padding-inline: 14px;
-    gap: 10px;
+  .hero-media video,
+  .hero-media img {
+    height: 55vh; /* モバイルでは少し低めに */
   }
 }
 
@@ -323,16 +364,8 @@ a:hover {
     font-size: 1.4rem;
   }
 
-  .hero-media video,
-  .hero-media img {
-    max-height: 240px;
-  }
-
   .global-nav ul {
-    flex-direction: column;
-  }
-
-  .global-nav a {
-    width: 100%;
+    padding-inline: 14px;
+    gap: 12px;
   }
 }

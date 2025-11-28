@@ -12,33 +12,27 @@
     <!-- ヘッダー -->
     <header class="site-header">
       <div class="logo-area">
-        <img src="assets/logo/logo.png" alt="Italian Wine Bar ChibaTech ロゴ" class="logo">
-        <div class="site-title">
-          <h1>Italian Wine Bar ChibaTech</h1>
-          <p class="sub-title">イタリアン CIT（シーアイティ）</p>
-          <p class="catchcopy">普段使いの気取らない贅沢、しませんか？</p>
+        <img src="assets/logo/mainlogo.png" alt="ロゴ" class="logo">
+        <nav class="global-nav">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="access.html">Access</a></li>
+        </ul>
+        </nav>
+    </div>
+
+      <!-- ヒーロー動画 -->
+      <div class="hero-media">
+        <video id="heroVideo" autoplay muted playsinline></video>
+        <div class="hero-overlay">
+            <p class="overlay-sub">いつも笑顔が溢れる明るい店内で</p>
+            <h1 class="overlay-main">普段使いの気取らない贅沢を。</h1>
+            <p class="overlay-note">Italian Wine Bar ChibaTech / イタリアン CIT</p>
         </div>
       </div>
-
-      <!-- ヒーロー動画 or 画像 -->
-      <div class="hero-media">
-        <!-- 動画がある場合 -->
-        <video src="assets/videos/pouring_wine.mp4" autoplay muted loop playsinline>
-          <!-- 動画が再生できない環境用のフォールバック画像 -->
-          <img src="assets/images/hero_bar.jpg" alt="ワインを注いでいる様子">
-        </video>
-      </div>
     </header>
-
-    <!-- グローバルナビ -->
-    <nav class="global-nav">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="course.html">Course</a></li>
-        <li><a href="access.html">Access</a></li>
-      </ul>
-    </nav>
 
     <!-- メインコンテンツ（グリッドレイアウト想定） -->
     <main class="main-grid">
@@ -46,7 +40,7 @@
 
         <!-- コンセプト -->
         <section class="section" id="concept">
-          <h2>Concept ― 気取らない贅沢を、CITで。</h2>
+          <h2> ― 気取らない贅沢を、CITで。</h2>
           <p>
             都田沼駅より徒歩2分とアクセス抜群。お仕事帰りや大切なパートナーとの時間はもちろん、
             ひとり飲みにも様々なシーンでご利用いただける、カジュアルなワイン酒場です。
@@ -56,20 +50,15 @@
             ワインの専門家はいませんが、自分たちが「本当に美味しい」と思ったワインだけをご用意しております。
           </p>
           <p>
-            『普段使いの気取らない贅沢しませんか？』<br>
-            女子会、記念日、友人とお気軽にどうぞ。
-          </p>
-        </section>
-
-        <!-- 衛生対策・雰囲気 -->
-        <section class="section" id="safety-and-atmosphere">
-          <h2>衛生対策は万全。居心地の良い店内。</h2>
-          <p>
             衛生対策は万全。旬の食材を使ったコスパ最高の美味しい料理を、安心してお楽しみいただけます。
           </p>
           <p>
             いつも笑顔が溢れる明るい店内です。初めての方もお気軽にお越しください。
             8名様以上の貸切は、定休日でもお気軽にお電話でご相談ください。
+          </p>
+          <p>
+            『普段使いの気取らない贅沢しませんか？』<br>
+            女子会、記念日、友人とお気軽にどうぞ。
           </p>
         </section>
 
@@ -79,8 +68,8 @@
 
           <div class="card-grid">
             <div class="card">
-              <img src="assets/images/kodawari_pasta.jpg" alt="日替わりパスタのイメージ">
-              <h3>こだわり１：日替わりメニュー</h3>
+              <img src="assets/images/絶品アヒージョ人気メニュ0.jpg" alt="日替わりのイメージ">
+              <h3>1. 日替わりメニュー</h3>
               <p>
                 豊富な日替わりメニュー！旬の美味しいお野菜、魚、お肉で美味しい料理を提供しております。
                 毎日変わるおすすめメニューも大人気。ワインと一緒にお楽しみください。
@@ -88,8 +77,8 @@
             </div>
 
             <div class="card">
-              <img src="assets/images/craft_beer.jpg" alt="ワインとアラカルトのイメージ">
-              <h3>こだわり２：気軽に立ち寄れるワイン酒場</h3>
+              <img src="assets/images/こだわり2または4.jpg" alt="ワインとアラカルトのイメージ">
+              <h3>2. 気軽に立ち寄れるワイン酒場</h3>
               <p>
                 ワインに合わせたリーズナブルで美味しいアラカルトメニューも豊富です。
                 オーナーが美味しいと思うワインを取り揃えておりますので、
@@ -98,8 +87,8 @@
             </div>
 
             <div class="card">
-              <img src="assets/images/cheese_dish.jpg" alt="チーズ料理のイメージ">
-              <h3>こだわり３：パーティーコース＆チーズ</h3>
+              <img src="assets/images/こだわり3コース料理.jpg" alt="料理のイメージ">
+              <h3>3. パーティーコース＆チーズ</h3>
               <p>
                 お得なコースメニューは 2,980円から3種類ご用意。飲み放題付きコースも人気です。
                 ワインと相性抜群の絶品チーズを使ったメニューも多数ご用意しております。
@@ -173,5 +162,28 @@
     </footer>
 
   </div>
+
+
+  <script>
+  const videos = [
+    "assets/videos/パスタ.mp4",
+    "assets/videos/ワイン.mp4"
+  ];
+
+  let current = 0;
+  const video = document.getElementById("heroVideo");
+
+  video.src = videos[current];
+  video.load();
+  video.play();
+
+  video.addEventListener("ended", () => {
+    current = (current + 1) % videos.length;
+    video.src = videos[current];
+    video.load();
+    video.play();
+  });
+  </script>
+
 </body>
 </html>
