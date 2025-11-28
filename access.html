@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>Access | Italian Wine Bar ChibaTech</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="wrapper">
+
+    <!-- ヘッダー -->
+    <header class="site-header">
+      <div class="logo-area">
+        <img src="assets/logo/mainlogo.png" alt="ロゴ" class="logo">
+        <nav class="global-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="course.html">Course</a></li>
+            <li><a href="access.html">Access</a></li>
+          </ul>
+        </nav>
+      </div>
+
+     <div class="hero-media">
+        <img src="assets/images/内装1.jpg" alt="お店の外観イメージ">
+        <div class="hero-overlay">
+            <p class="overlay-sub">都田沼駅より徒歩2分</p>
+            <h1 class="overlay-main">仕事帰りにも、学校帰りにも。</h1>
+            <p class="overlay-note">Italian Wine Bar ChibaTech / イタリアン CIT</p>
+        </div>
+        </div>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main class="main-grid">
+      <article class="main-content">
+
+        <!-- アクセス概要 -->
+        <section class="section" id="access-intro">
+          <h2>Access ― アクセス</h2>
+          <p>
+            住所：〒999-999　奈良氏之市都田沼123<br>
+            最寄駅：都田沼駅
+          </p>
+          <p>
+            学校帰りやお仕事帰りにも立ち寄りやすいロケーションです。
+          </p>
+        </section>
+
+        <!-- 住所・行き方 -->
+        <section class="section" id="by-train">
+          <h2>電車でお越しの場合</h2>
+          <p>
+            都田沼駅より徒歩2分。北口を出て、ロータリーを右手に直進。<br>
+            1つ目の信号を左折して、2本目の路地を右に入ると左手に当店が見えてきます。
+          </p>
+        </section>
+
+        <!-- 地図エリア（ダミー） -->
+        <section class="section" id="map">
+          <h2>周辺地図</h2>
+          <div style="
+            width: 100%;
+            height: 260px;
+            border-radius: 10px;
+            background: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: #555;
+          ">
+            Mapエリア（Googleマップ等を埋め込み予定）
+          </div>
+          <p style="font-size:0.85rem; margin-top:8px;">
+            実際の公開時には、Googleマップなどの埋め込みを想定しています。
+          </p>
+        </section>
+
+        <!-- 営業時間 -->
+        <section class="section" id="hours">
+          <h2>営業時間・定休日</h2>
+          <ul>
+            <li>営業時間：17:00〜23:30（L.O. 23:00）</li>
+            <li>定休日：不定休（貸切のご相談はお気軽にどうぞ）</li>
+            <li>電話番号：000-1234-5678</li>
+          </ul>
+        </section>
+
+      </article>
+
+      <!-- サイドバー -->
+      <aside class="sidebar">
+        <section class="section side-box">
+          <h2>店舗情報</h2>
+          <p>
+            Italian Wine Bar ChibaTech（イタリアン CIT）<br>
+            〒999-999　奈良氏之市都田沼123<br>
+            TEL：000-1234-5678
+          </p>
+        </section>
+
+        <section class="section side-box">
+          <h2>ご予約について</h2>
+          <p>
+            お席のご予約はお電話にて承っております。<br>
+            コース利用・貸切のご相談もお気軽にお問い合わせください。
+          </p>
+        </section>
+      </aside>
+    </main>
+
+    <!-- フッター -->
+    <footer class="site-footer">
+      <p>&copy; 2025 Italian Wine Bar ChibaTech / イタリアン CIT</p>
+    </footer>
+
+  </div>
+
+  <!-- ヒーロー動画切り替え -->
+  <script>
+    const videos = [
+      "assets/videos/パスタ.mp4",
+      "assets/videos/ワイン.mp4"
+    ];
+
+    let current = 0;
+    const video = document.getElementById("heroVideo");
+
+    video.src = videos[current];
+    video.load();
+    video.play();
+
+    video.addEventListener("ended", () => {
+      current = (current + 1) % videos.length;
+      video.src = videos[current];
+      video.load();
+      video.play();
+    });
+  </script>
+</body>
+</html>
