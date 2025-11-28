@@ -434,3 +434,22 @@ a:hover {
     gap: 12px;
   }
 }
+
+@media (max-width: 600px) {
+  .logo-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .global-nav ul {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .kodawari-card img {
+    height: 220px;
+  }
+  .concept-image {
+    height: 320px;
+  }
+}
