@@ -188,10 +188,11 @@ a:hover {
 .sidebar {
   min-width: 0;
 }
-/* コンセプト用 背景画像 */
+
 .concept-image {
   position: relative;
-  margin: 12px 0 22px;
+  max-height: 600px; 
+  margin: 5px  5px;
   border-radius: 14px;
   overflow: hidden;
   box-shadow: 0 6px 14px rgba(0,0,0,0.12);

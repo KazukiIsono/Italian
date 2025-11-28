@@ -26,7 +26,7 @@
       </div>
 
      <div class="hero-media">
-        <img src="assets/images/内装1.jpg" alt="お店の外観イメージ">
+        <img src="assets/images/内装1.jpg" alt="内装イメージ">
         <div class="hero-overlay">
             <p class="overlay-sub">都田沼駅より徒歩2分</p>
             <h1 class="overlay-main">仕事帰りにも、学校帰りにも。</h1>
@@ -42,6 +42,7 @@
         <!-- アクセス概要 -->
         <section class="section" id="access-intro">
           <h2>Access ― アクセス</h2>
+          <img class="concept-image" src="assets/images/外観.png" alt="外観の様子">
           <p>
             住所：〒999-999　奈良氏之市都田沼123<br>
             最寄駅：都田沼駅
@@ -140,27 +141,5 @@
     </footer>
 
   </div>
-
-  <!-- ヒーロー動画切り替え -->
-  <script>
-    const videos = [
-      "assets/videos/パスタ.mp4",
-      "assets/videos/ワイン.mp4"
-    ];
-
-    let current = 0;
-    const video = document.getElementById("heroVideo");
-
-    video.src = videos[current];
-    video.load();
-    video.play();
-
-    video.addEventListener("ended", () => {
-      current = (current + 1) % videos.length;
-      video.src = videos[current];
-      video.load();
-      video.play();
-    });
-  </script>
 </body>
 </html>

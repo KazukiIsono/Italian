@@ -162,27 +162,5 @@
     </footer>
 
   </div>
-
-  <!-- ヒーロー動画切り替え -->
-  <script>
-    const videos = [
-      "assets/videos/パスタ.mp4",
-      "assets/videos/ワイン.mp4"
-    ];
-
-    let current = 0;
-    const video = document.getElementById("heroVideo");
-
-    video.src = videos[current];
-    video.load();
-    video.play();
-
-    video.addEventListener("ended", () => {
-      current = (current + 1) % videos.length;
-      video.src = videos[current];
-      video.load();
-      video.play();
-    });
-  </script>
 </body>
 </html>
