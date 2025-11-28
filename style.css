@@ -188,6 +188,42 @@ a:hover {
 .sidebar {
   min-width: 0;
 }
+/* コンセプト用 背景画像 */
+.concept-image {
+  position: relative;
+  margin: 12px 0 22px;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+}
+
+.concept-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  display: block;
+}
+
+/* 画像中央の見出し */
+.concept-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  margin: 0;
+  padding: 14px 26px;
+
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #ffffff;   
+  
+  background: rgba(0, 0, 0, 0.4);
+
+  text-align: center;
+  letter-spacing: 0.08em;
+}
+
 
 /* =========================
    5. セクション共通
@@ -212,7 +248,7 @@ a:hover {
 .section p {
   margin: 0 0 10px;
   line-height: 1.8;
-  font-size: 0.94rem;
+  font-size: 1.08rem;
 }
 
 .section ul {
@@ -235,31 +271,59 @@ a:hover {
   margin-top: 8px;
 }
 
-.card {
-  background: #fffaf3;
+/* こだわり用カードはリンク全体をクリック可能に */
+.kodawari-card {
+  position: relative;
+  display: block;
+  padding: 0;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
-  border: 1px solid #f1e1cd;
+  background: #000;                 /* 画像の縁が出ないよう保険で黒 */
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+  border: none;                     /* 既存 .card の枠を消す */
+  text-decoration: none;            /* aタグの下線を消す */
 }
 
-.card img {
+/* 画像は大きめに */
+.kodawari-card img {
   width: 100%;
-  display: block;
-  height: 150px;
+  height: 400px;
   object-fit: cover;
+  display: block;
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-.card h3 {
-  margin: 10px 12px 4px;
-  font-size: 1rem;
-  color: #5a2a1a;
+/* タイトルラベルを画像の上に重ねる */
+.kodawari-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 10px 14px;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.7),
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0)
+  );
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
 }
 
-.card p {
-  margin: 0 12px 12px;
-  font-size: 0.88rem;
-  line-height: 1.7;
+/* ホバー時のちょいリッチな演出 */
+.kodawari-card:hover img {
+  transform: scale(1.03);
+  filter: brightness(0.75);
+}
+
+.kodawari-card:hover .kodawari-label {
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0)
+  );
 }
 
 /* =========================
